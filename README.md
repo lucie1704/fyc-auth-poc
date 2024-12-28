@@ -16,8 +16,36 @@ N'hésitez pas à consulter les documentations officielles des outils utilisés 
 
 ## Installation
 
-1. Clonez ce projet :
+1. Clonez ce projet
 
    ```bash
    git clone git@github.com:lucie1704/fyc-auth-poc.git
    ```
+
+2. Installer les dépendances
+
+```bash
+npm i
+```
+
+3. Configuer votre .env
+
+Créer votre .env et suivre les indications du .env.example
+
+4. Executer la migration de la DB
+
+```bash
+prisma migrate dev
+```
+
+5. Lancer votre projet
+
+```bash
+npm run dev
+```
+
+6. Lancer prisma pour accéder à la vue de la DB
+
+```bash
+prisma studio
+```
