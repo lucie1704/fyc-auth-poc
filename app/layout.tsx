@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 h-screen flex flex-col">
+      <body className="bg-gray-50 flex flex-col">
         <SessionProvider>
           <LayoutContent>{children}</LayoutContent>
         </SessionProvider>
