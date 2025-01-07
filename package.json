@@ -2,7 +2,7 @@
   "name": "fyc-multi-auth-poc",
   "version": "0.1.0",
   "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "seed": "ts-node prisma/seed.mjs"
   },
   "private": true,
   "scripts": {
