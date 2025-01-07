@@ -8,7 +8,6 @@ import bcrypt from "bcrypt";
 
 export const authOptions = {
   adapter: PrismaAdapter(prisma),
-  debug: true,
   session: {
     strategy: "jwt",
   },
