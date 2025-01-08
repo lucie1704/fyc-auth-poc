@@ -11,7 +11,7 @@ export default function Profile() {
         <div className="p-6 flex items-center space-x-6">
           <img
             className="w-20 h-20 rounded-full border-2 border-gray-300"
-            src={session?.user?.image || '/default-profile.png'}
+            src={session?.user?.image || 'default.png'}
             alt="Profile Picture"
           />
           <div>

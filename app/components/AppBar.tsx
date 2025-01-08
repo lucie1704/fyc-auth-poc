@@ -66,7 +66,7 @@ export const AppBar = () => {
                   onClick={toggleMenu}
                 >
                   <img
-                    src={session.user?.image || '/default-avatar.png'}
+                    src={session?.user?.image || 'default.png'}
                     alt="User Avatar"
                     className="size-10 object-cover"
                   />
@@ -122,7 +122,7 @@ export const AppBar = () => {
               <div className="sm:flex sm:gap-4">
                 <a
                   className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                  href="/api/auth/signin"
+                  href="/signin"
                 >
                   Se connecter
                 </a>
