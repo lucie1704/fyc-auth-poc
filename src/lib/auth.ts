@@ -72,12 +72,23 @@ export const authOptions = {
       },
     }),
   ],
+  signIn: '/signin',
+  error: '/error',
+  newAccount: '/new',
+  verifyRequest: '/verify',
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
       }
       return token;
+    },
+
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith(baseUrl)) {
+        return `${baseUrl}/`;
+      }
+      return url;
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
