@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'; // Pour la navigation
-import { usePathname } from 'next/navigation'; // Pour vérifier la route
+import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function ProtectedPage() {
   const [username, setUsername] = useState<string | null>(null);
@@ -19,7 +19,7 @@ export default function ProtectedPage() {
         setUsername(data.username);
       } else {
         setUsername(null); // Redirection si non connecté
-        if (pathname === '/protected') {
+        if (pathname === '/me') {
           router.push('/login');
         }
       }
@@ -54,7 +54,7 @@ export default function ProtectedPage() {
       method: 'POST',
     });
     if (res.ok) {
-      router.push('/login'); // Redirection après déconnexion
+      router.push('/login');
     }
   };
 

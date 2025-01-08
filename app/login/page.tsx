@@ -20,7 +20,7 @@ export default function LoginPage() {
         setIsLoggedIn(true);
         setUsername(data.username);
         if (pathname === '/login') {
-          router.push('/protected'); // Redirection vers /protected si connecté
+          router.push('/me');
         }
       }
     };
@@ -43,7 +43,7 @@ export default function LoginPage() {
     if (res.ok) {
       setIsLoggedIn(true);
       setMessage('Connexion réussie!');
-      router.push('/protected'); // Redirection après connexion
+      router.push('/me');
     } else {
       setMessage(data.error || 'Erreur de connexion');
     }
