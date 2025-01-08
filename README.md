@@ -24,6 +24,11 @@ N'hésitez pas à consulter les documentations officielles des outils utilisés 
 
 ### 2. Installer les dépendances
 
+Si vous n'avez pas Node.js ou que vous n'avez pas la bonne version (version 22) :
+```bash
+https://nodejs.org/fr/download
+```
+A la racine du projet, faites :
 ```bash
 npm i
 ```
@@ -33,6 +38,11 @@ npm i
 Créer votre .env et suivre les indications du .env.example
 
 ### 4. Executer la migration de la DB
+
+Si vous n'avez pas Prisma d'installé
+```bash
+npm install -g prisma
+```
 
 ```bash
 prisma migrate dev
