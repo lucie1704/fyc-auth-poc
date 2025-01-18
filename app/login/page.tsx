@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation'; // Pour rediriger
-import { usePathname } from 'next/navigation'; // Pour vérifier la route actuelle
+import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function LoginPage() {
   const [username, setUsername] = useState<string>('');
@@ -10,7 +10,7 @@ export default function LoginPage() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const router = useRouter();
-  const pathname = usePathname(); // Utilisé pour vérifier la route actuelle
+  const pathname = usePathname();
 
   useEffect(() => {
     const checkLoginStatus = async () => {

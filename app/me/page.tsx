@@ -18,7 +18,7 @@ export default function ProtectedPage() {
       if (res.ok) {
         setUsername(data.username);
       } else {
-        setUsername(null); // Redirection si non connecté
+        setUsername(null); // redirection si non connecté
         if (pathname === '/me') {
           router.push('/login');
         }

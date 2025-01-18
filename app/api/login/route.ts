@@ -3,10 +3,8 @@ import * as cookie from 'cookie';
 
 export async function POST(req: NextRequest) {
   try {
-    // Extraire le nom d'utilisateur du corps de la requête
     const { username } = await req.json();
 
-    // Vérifier que le nom d'utilisateur est fourni
     if (!username) {
       return new NextResponse(
         JSON.stringify({ error: "Nom d'utilisateur requis" }),
@@ -14,21 +12,18 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Sérialisation du cookie avec les options nécessaires
     const serializedCookie = cookie.serialize('username', username, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // Sécurisé en production
-      maxAge: 60 * 60 * 24, // Expiration de 1 jour
-      path: '/', // Cookie accessible sur tout le domaine
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 60 * 60 * 24,
+      path: '/',
     });
 
-    // Créer la réponse avec le cookie
     const response = new NextResponse(
       JSON.stringify({ message: 'Connexion réussie!' }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
 
-    // Ajouter le cookie à la réponse
     response.headers.set('Set-Cookie', serializedCookie);
 
     return response;
